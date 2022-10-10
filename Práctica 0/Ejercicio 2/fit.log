@@ -1,0 +1,188 @@
+
+
+*******************************************************************************
+Tue Oct  4 22:30:37 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=ax^2+bx+c
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Tue Oct  4 22:30:45 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=ax^2+bx+c
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Tue Oct  4 22:51:40 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x+b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.7730106322e+10   0.00e+00  1.22e+04    1.000000e+00   1.000000e+00
+   7 1.5359394864e+00  -1.08e-02  1.22e-03    6.730147e-05  -3.427703e-01
+
+After 7 iterations the fit converged.
+final sum of squares of residuals : 1.53594
+rel. change during last iteration : -1.0783e-07
+
+degrees of freedom    (FIT_NDF)                        : 58
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.162732
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0264817
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 6.73015e-05      +/- 2.426e-06    (3.605%)
+b               = -0.34277         +/- 0.04171      (12.17%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.864  1.000 
+
+
+*******************************************************************************
+Tue Oct  4 22:52:33 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=ax^2+bx
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Oct  4 22:52:44 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x^2+b*x
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Oct  4 22:52:56 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x^2+b*x
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Oct  4 22:55:50 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x^2+b*x
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Tue Oct  4 22:55:55 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x^2+b*x
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Oct  4 22:56:03 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x^2+b*x+c
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Oct  4 22:56:13 2022
+
+
+FIT:    data read from "tiempos_ordenacion.dat"
+        format = z
+        #datapoints = 60
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*x*x+b*x+c
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 2.6697170456e+10   0.00e+00  1.58e+04    6.730147e-05  -3.427703e-01   1.000000e+00
+   8 1.8964895163e-03  -4.05e-07  1.58e-04    2.385276e-09  -3.541227e-06   4.390713e-03
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 0.00189649
+rel. change during last iteration : -4.0535e-12
+
+degrees of freedom    (FIT_NDF)                        : 57
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00576817
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.32717e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 2.38528e-09      +/- 1.111e-11    (0.4657%)
+b               = -3.54123e-06     +/- 3.409e-07    (9.628%)
+c               = 0.00439071       +/- 0.002191     (49.9%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.968  1.000 
+c               0.738 -0.861  1.000 
