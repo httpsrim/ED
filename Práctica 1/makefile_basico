@@ -1,0 +1,89 @@
+BASEDIR = estudiante
+SRC = src
+INC = include
+OBJ = obj
+BIN = bin
+LIB = lib
+CXX = g++
+CPPFLAGS = -Wall -g  -I$(BASEDIR)/$(INC) -c --std=c++11 
+
+all: negativo subimagen zoom icono contraste barajar
+
+# ************ Generación de documentación ******************
+documentacion:
+	doxygen $(BASEDIR)/doc/doxys/Doxyfile
+
+	
+# ************ Compilación Ejecutables ************
+negativo:$(BASEDIR)/$(BIN)/negativo
+$(BASEDIR)/$(BIN)/negativo: $(BASEDIR)/$(OBJ)/negativo.o $(BASEDIR)/$(LIB)/libimage.a 
+	$(CXX) -o $(BASEDIR)/$(BIN)/negativo $(BASEDIR)/$(OBJ)/negativo.o $(BASEDIR)/$(LIB)/libimage.a 
+
+subimagen:$(BASEDIR)/$(BIN)/subimagen
+$(BASEDIR)/$(BIN)/subimagen: $(BASEDIR)/$(OBJ)/subimagen.o $(BASEDIR)/$(LIB)/libimage.a 
+	$(CXX) -o $(BASEDIR)/$(BIN)/subimagen $(BASEDIR)/$(OBJ)/subimagen.o $(BASEDIR)/$(LIB)/libimage.a 
+
+zoom:$(BASEDIR)/$(BIN)/zoom
+$(BASEDIR)/$(BIN)/zoom: $(BASEDIR)/$(OBJ)/zoom.o $(BASEDIR)/$(LIB)/libimage.a 
+	$(CXX) -o $(BASEDIR)/$(BIN)/zoom $(BASEDIR)/$(OBJ)/zoom.o $(BASEDIR)/$(LIB)/libimage.a 
+
+icono:$(BASEDIR)/$(BIN)/icono
+$(BASEDIR)/$(BIN)/icono: $(BASEDIR)/$(OBJ)/icono.o $(BASEDIR)/$(LIB)/libimage.a 
+	$(CXX) -o $(BASEDIR)/$(BIN)/icono $(BASEDIR)/$(OBJ)/icono.o $(BASEDIR)/$(LIB)/libimage.a 
+
+contraste:$(BASEDIR)/$(BIN)/contraste
+$(BASEDIR)/$(BIN)/contraste: $(BASEDIR)/$(OBJ)/contraste.o $(BASEDIR)/$(LIB)/libimage.a 
+	$(CXX) -o $(BASEDIR)/$(BIN)/contraste $(BASEDIR)/$(OBJ)/contraste.o $(BASEDIR)/$(LIB)/libimage.a 
+
+barajar:$(BASEDIR)/$(BIN)/barajar
+$(BASEDIR)/$(BIN)/barajar: $(BASEDIR)/$(OBJ)/barajar.o $(BASEDIR)/$(LIB)/libimage.a 
+	$(CXX) -o $(BASEDIR)/$(BIN)/barajar $(BASEDIR)/$(OBJ)/barajar.o $(BASEDIR)/$(LIB)/libimage.a 
+
+
+
+# ************ Compilación de módulos ************
+
+$(BASEDIR)/$(OBJ)/negativo.o: $(BASEDIR)/$(SRC)/negativo.cpp $(BASEDIR)/$(INC)/image.h 
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/negativo.cpp -o $(BASEDIR)/$(OBJ)/negativo.o
+
+$(BASEDIR)/$(OBJ)/subimagen.o: $(BASEDIR)/$(SRC)/subimagen.cpp $(BASEDIR)/$(INC)/image.h 
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/subimagen.cpp -o $(BASEDIR)/$(OBJ)/subimagen.o
+	
+$(BASEDIR)/$(OBJ)/zoom.o: $(BASEDIR)/$(SRC)/zoom.cpp $(BASEDIR)/$(INC)/image.h 
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/zoom.cpp -o $(BASEDIR)/$(OBJ)/zoom.o
+
+$(BASEDIR)/$(OBJ)/icono.o: $(BASEDIR)/$(SRC)/icono.cpp $(BASEDIR)/$(INC)/image.h 
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/icono.cpp -o $(BASEDIR)/$(OBJ)/icono.o
+
+$(BASEDIR)/$(OBJ)/contraste.o: $(BASEDIR)/$(SRC)/contraste.cpp $(BASEDIR)/$(INC)/image.h 
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/contraste.cpp -o $(BASEDIR)/$(OBJ)/contraste.o
+
+$(BASEDIR)/$(OBJ)/barajar.o: $(BASEDIR)/$(SRC)/barajar.cpp $(BASEDIR)/$(INC)/image.h 
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/barajar.cpp -o $(BASEDIR)/$(OBJ)/barajar.o
+
+
+$(BASEDIR)/$(OBJ)/image.o: $(BASEDIR)/$(SRC)/image.cpp $(BASEDIR)/$(INC)/image.h
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/image.cpp -o $(BASEDIR)/$(OBJ)/image.o
+
+$(BASEDIR)/$(OBJ)/imageop.o: $(BASEDIR)/$(SRC)/imageop.cpp $(BASEDIR)/$(INC)/image.h
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/imageop.cpp -o $(BASEDIR)/$(OBJ)/imageop.o
+
+$(BASEDIR)/$(OBJ)/imageIO.o: $(BASEDIR)/$(SRC)/imageIO.cpp $(BASEDIR)/$(INC)/imageIO.h
+	$(CXX) $(CPPFLAGS) $(BASEDIR)/$(SRC)/imageIO.cpp -o $(BASEDIR)/$(OBJ)/imageIO.o
+
+
+# ************ Creacion Libreria ************
+$(BASEDIR)/$(LIB)/libimage.a: $(BASEDIR)/$(OBJ)/image.o $(BASEDIR)/$(OBJ)/imageIO.o $(BASEDIR)/$(OBJ)/imageop.o
+	ar -rvs $(BASEDIR)/$(LIB)/libimage.a $(BASEDIR)/$(OBJ)/image.o $(BASEDIR)/$(OBJ)/imageIO.o $(BASEDIR)/$(OBJ)/imageop.o
+
+
+# ************ Limpieza ************
+clean :
+	-rm $(BASEDIR)/$(OBJ)/* $(BASEDIR)/$(SRC)/*~ $(BASEDIR)/$(INC)/*~ $(BASEDIR)/*~
+
+mrproper : clean
+	-rm $(BASEDIR)/$(BIN)/* $(BASEDIR)/doc/doc_doxygen/html/*
+
+
+
+
