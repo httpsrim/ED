@@ -1,0 +1,13 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="MaxStack::pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d4/de4/class_max_stack.html#a312e7f6c761a199c1369fbe651e084f0",tooltip="Elimina el ultimo elemento de lla pila."];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="MaxStack::push",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d4/de4/class_max_stack.html#a9457832d7cf4e29d0e1e8f71a19aac73",tooltip="Almacena en la ultima posicion una instancia elemet."];
+}
